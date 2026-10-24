@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_defile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#121318" />
+      <stop offset="100%" stop-color="#090a0d" />
+    </linearGradient>
+    <filter id="shadow_defile" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#bg_defile)" />
+
+  <!-- Subtle grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="60" x2="800" y2="60" />
+    <line x1="0" y1="120" x2="800" y2="120" />
+    <line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="240" x2="800" y2="240" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="0" y1="420" x2="800" y2="420" />
+    <line x1="120" y1="0" x2="120" y2="480" />
+    <line x1="260" y1="0" x2="260" y2="480" />
+    <line x1="400" y1="0" x2="400" y2="480" />
+    <line x1="540" y1="0" x2="540" y2="480" />
+    <line x1="680" y1="0" x2="680" y2="480" />
+  </g>
+
+  <!-- Vault Frame -->
+  <g filter="url(#shadow_defile)">
+    <rect x="70" y="45" width="660" height="390" rx="12" fill="#101115" stroke="#252834" stroke-width="1.2" />
+
+    <!-- Top App Bar -->
+    <rect x="70" y="45" width="660" height="44" rx="12" fill="#15171d" />
+    <rect x="70" y="77" width="660" height="12" fill="#15171d" />
+    <line x1="70" y1="89" x2="730" y2="89" stroke="#222530" stroke-width="1" />
+
+    <circle cx="94" cy="67" r="4.5" fill="#353946" />
+    <circle cx="108" cy="67" r="4.5" fill="#353946" />
+    <circle cx="122" cy="67" r="4.5" fill="#353946" />
+
+    <text x="148" y="71" fill="#f4f4f5" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">DeFile Protocol</text>
+    <text x="250" y="71" fill="#71717a" font-family="'Geist Mono', monospace" font-size="11">/ encrypted_vault</text>
+
+    <!-- Hackathon Winner Tag -->
+    <rect x="420" y="56" width="138" height="22" rx="11" fill="#1c202a" stroke="#2c364c" stroke-width="1" />
+    <text x="489" y="71" fill="#60a5fa" font-family="'Geist Mono', monospace" font-size="9.5" text-anchor="middle">🏆 $2,000 BUILD WINNER</text>
+
+    <!-- Connected Wallet -->
+    <rect x="568" y="56" width="144" height="22" rx="11" fill="#162033" stroke="#254374" stroke-width="1" />
+    <circle cx="580" cy="67" r="3.5" fill="#3b82f6" />
+    <text x="590" y="71" fill="#93c5fd" font-family="'Geist Mono', monospace" font-size="10" font-weight="500">0x742d...44e9 (Base)</text>
+
+    <!-- Vault Content -->
+    <!-- Encrypted Blocks Grid -->
+    <g transform="translate(94, 112)">
+      <!-- Card 1 -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="250" height="120" rx="8" fill="#13151c" stroke="#242836" stroke-width="1" />
+        <text x="16" y="28" fill="#e4e4e7" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">seed_phrase_backup.gpg</text>
+        <text x="16" y="46" fill="#71717a" font-family="'Geist Mono', monospace" font-size="9.5">CID: bafybeigdyrzt5sfp7...23xq</text>
+        <rect x="16" y="60" width="70" height="18" rx="4" fill="#182030" />
+        <text x="51" y="73" fill="#60a5fa" font-family="'Geist Mono', monospace" font-size="8.5" text-anchor="middle">AES-256 GCM</text>
+        <rect x="92" y="60" width="60" height="18" rx="4" fill="#16231d" />
+        <text x="122" y="73" fill="#4ade80" font-family="'Geist Mono', monospace" font-size="8.5" text-anchor="middle">PINNED</text>
+        <text x="16" y="104" fill="#52525b" font-family="-apple-system, sans-serif" font-size="9">Access: Multisig (2 of 3) · Verified on Base</text>
+      </g>
+
+      <!-- Card 2 -->
+      <g transform="translate(262, 0)">
+        <rect x="0" y="0" width="250" height="120" rx="8" fill="#13151c" stroke="#242836" stroke-width="1" />
+        <text x="16" y="28" fill="#e4e4e7" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">incorporation_docs.pdf</text>
+        <text x="16" y="46" fill="#71717a" font-family="'Geist Mono', monospace" font-size="9.5">CID: bafybeihka7u24w5p...91mm</text>
+        <rect x="16" y="60" width="70" height="18" rx="4" fill="#182030" />
+        <text x="51" y="73" fill="#60a5fa" font-family="'Geist Mono', monospace" font-size="8.5" text-anchor="middle">AES-256 GCM</text>
+        <rect x="92" y="60" width="60" height="18" rx="4" fill="#16231d" />
+        <text x="122" y="73" fill="#4ade80" font-family="'Geist Mono', monospace" font-size="8.5" text-anchor="middle">PINNED</text>
+        <text x="16" y="104" fill="#52525b" font-family="-apple-system, sans-serif" font-size="9">Access: Owner Only · Revocable Grants</text>
+      </g>
+
+      <!-- Bottom Encryption Pipeline Flow -->
+      <g transform="translate(0, 138)">
+        <rect x="0" y="0" width="512" height="124" rx="8" fill="#12141a" stroke="#222530" stroke-width="1" />
+        <text x="16" y="26" fill="#71717a" font-family="'Geist Mono', monospace" font-size="10" letter-spacing="0.06em">CLIENT-SIDE ZERO-KNOWLEDGE PIPELINE</text>
+        
+        <!-- Step 1 -->
+        <g transform="translate(20, 44)">
+          <rect x="0" y="0" width="94" height="60" rx="6" fill="#181a22" stroke="#2a2e3d" stroke-width="1" />
+          <text x="47" y="24" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" text-anchor="middle">1. Local File</text>
+          <text x="47" y="44" fill="#71717a" font-family="'Geist Mono', monospace" font-size="8.5" text-anchor="middle">Raw Buffer</text>
+        </g>
+        <path d="M 120 74 L 138 74" stroke="#40465c" stroke-width="1.5" />
+        <polygon points="138,70 144,74 138,78" fill="#40465c" />
+
+        <!-- Step 2 -->
+        <g transform="translate(148, 44)">
+          <rect x="0" y="0" width="102" height="60" rx="6" fill="#181a22" stroke="#2a2e3d" stroke-width="1" />
+          <text x="51" y="24" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" text-anchor="middle">2. WebCrypto</text>
+          <text x="51" y="44" fill="#60a5fa" font-family="'Geist Mono', monospace" font-size="8.5" text-anchor="middle">AES-GCM 256</text>
+        </g>
+        <path d="M 256 74 L 274 74" stroke="#40465c" stroke-width="1.5" />
+        <polygon points="274,70 280,74 274,78" fill="#40465c" />
+
+        <!-- Step 3 -->
+        <g transform="translate(284, 44)">
+          <rect x="0" y="0" width="102" height="60" rx="6" fill="#181a22" stroke="#2a2e3d" stroke-width="1" />
+          <text x="51" y="24" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" text-anchor="middle">3. IPFS DAG</text>
+          <text x="51" y="44" fill="#34d399" font-family="'Geist Mono', monospace" font-size="8.5" text-anchor="middle">CID Chunking</text>
+        </g>
+        <path d="M 392 74 L 410 74" stroke="#40465c" stroke-width="1.5" />
+        <polygon points="410,70 416,74 410,78" fill="#40465c" />
+
+        <!-- Step 4 -->
+        <g transform="translate(420, 44)">
+          <rect x="0" y="0" width="80" height="60" rx="6" fill="#181a22" stroke="#2a2e3d" stroke-width="1" />
+          <text x="40" y="24" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" text-anchor="middle">4. Onchain</text>
+          <text x="40" y="44" fill="#818cf8" font-family="'Geist Mono', monospace" font-size="8.5" text-anchor="middle">Base Smart Cont</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Status Bar -->
+    <rect x="70" y="398" width="660" height="37" rx="0" fill="#141418" />
+    <line x1="70" y1="398" x2="730" y2="398" stroke="#222530" stroke-width="1" />
+    <text x="94" y="421" fill="#71717a" font-family="'Geist Mono', monospace" font-size="10">WALLETCONNECT BUILD THE NEW INTERNET HACKATHON</text>
+    <text x="706" y="421" fill="#71717a" font-family="'Geist Mono', monospace" font-size="10" text-anchor="end">SOLIDITY · IPFS · ETHERS.JS · BASE</text>
+  </g>
+</svg>

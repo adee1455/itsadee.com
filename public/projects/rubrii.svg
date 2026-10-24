@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_rubrii" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141416" />
+      <stop offset="100%" stop-color="#0a0a0c" />
+    </linearGradient>
+    <filter id="shadow_rubrii" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#bg_rubrii)" />
+
+  <!-- Subtle grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="60" x2="800" y2="60" />
+    <line x1="0" y1="120" x2="800" y2="120" />
+    <line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="240" x2="800" y2="240" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="0" y1="420" x2="800" y2="420" />
+    <line x1="120" y1="0" x2="120" y2="480" />
+    <line x1="260" y1="0" x2="260" y2="480" />
+    <line x1="400" y1="0" x2="400" y2="480" />
+    <line x1="540" y1="0" x2="540" y2="480" />
+    <line x1="680" y1="0" x2="680" y2="480" />
+  </g>
+
+  <!-- Dashboard Frame -->
+  <g filter="url(#shadow_rubrii)">
+    <rect x="70" y="45" width="660" height="390" rx="12" fill="#101013" stroke="#2a2a32" stroke-width="1.2" />
+
+    <!-- Top App Bar -->
+    <rect x="70" y="45" width="660" height="44" rx="12" fill="#16161a" />
+    <rect x="70" y="77" width="660" height="12" fill="#16161a" />
+    <line x1="70" y1="89" x2="730" y2="89" stroke="#25252d" stroke-width="1" />
+
+    <circle cx="94" cy="67" r="4.5" fill="#383842" />
+    <circle cx="108" cy="67" r="4.5" fill="#383842" />
+    <circle cx="122" cy="67" r="4.5" fill="#383842" />
+
+    <text x="148" y="71" fill="#f4f4f5" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Rubrii</text>
+    <text x="190" y="71" fill="#71717a" font-family="'Geist Mono', monospace" font-size="11">/ case_analysis_live</text>
+
+    <rect x="600" y="56" width="112" height="22" rx="11" fill="#1e1e24" stroke="#33333d" stroke-width="1" />
+    <circle cx="612" cy="67" r="3" fill="#a855f7" />
+    <text x="622" y="71" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10" font-weight="500">AI Engine Active</text>
+
+    <!-- Split Interface -->
+    <!-- Left: Natural Language Case Input & Symptom Extraction -->
+    <rect x="94" y="110" width="290" height="268" rx="8" fill="#141418" stroke="#26262e" stroke-width="1" />
+    <text x="114" y="136" fill="#71717a" font-family="'Geist Mono', monospace" font-size="10" letter-spacing="0.06em">PATIENT CHIEF COMPLAINTS</text>
+
+    <rect x="114" y="150" width="250" height="60" rx="6" fill="#1a1a20" stroke="#2f2f3a" stroke-width="1" />
+    <text x="126" y="172" fill="#e4e4e7" font-family="-apple-system, sans-serif" font-size="11">"Intense migraine worse right side,</text>
+    <text x="126" y="190" fill="#e4e4e7" font-family="-apple-system, sans-serif" font-size="11">chilly, irritable with stomach cramps..."</text>
+
+    <text x="114" y="234" fill="#71717a" font-family="'Geist Mono', monospace" font-size="10" letter-spacing="0.06em">EXTRACTED RUBRICS (4)</text>
+    
+    <g transform="translate(114, 248)">
+      <rect x="0" y="0" width="250" height="24" rx="4" fill="#1e1e26" stroke="#2d2d38" stroke-width="1" />
+      <text x="10" y="16" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10">Head; pain, right-sided</text>
+      <text x="238" y="16" fill="#a1a1aa" font-family="'Geist Mono', monospace" font-size="9" text-anchor="end">Grade 3</text>
+    </g>
+    <g transform="translate(114, 280)">
+      <rect x="0" y="0" width="250" height="24" rx="4" fill="#1e1e26" stroke="#2d2d38" stroke-width="1" />
+      <text x="10" y="16" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10">Generalities; irritability</text>
+      <text x="238" y="16" fill="#a1a1aa" font-family="'Geist Mono', monospace" font-size="9" text-anchor="end">Grade 3</text>
+    </g>
+    <g transform="translate(114, 312)">
+      <rect x="0" y="0" width="250" height="24" rx="4" fill="#1e1e26" stroke="#2d2d38" stroke-width="1" />
+      <text x="10" y="16" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10">Stomach; spasmodic pain</text>
+      <text x="238" y="16" fill="#a1a1aa" font-family="'Geist Mono', monospace" font-size="9" text-anchor="end">Grade 2</text>
+    </g>
+    <g transform="translate(114, 344)">
+      <rect x="0" y="0" width="250" height="24" rx="4" fill="#1e1e26" stroke="#2d2d38" stroke-width="1" />
+      <text x="10" y="16" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="10">Chill; coldness aggravated</text>
+      <text x="238" y="16" fill="#a1a1aa" font-family="'Geist Mono', monospace" font-size="9" text-anchor="end">Grade 2</text>
+    </g>
+
+    <!-- Right: Repertorisation Remedy Matches -->
+    <rect x="402" y="110" width="304" height="268" rx="8" fill="#141418" stroke="#26262e" stroke-width="1" />
+    <text x="422" y="136" fill="#71717a" font-family="'Geist Mono', monospace" font-size="10" letter-spacing="0.06em">TOP REPERTORISED REMEDIES</text>
+
+    <!-- Match 1 -->
+    <g transform="translate(422, 152)">
+      <rect x="0" y="0" width="264" height="46" rx="6" fill="#1a1a22" stroke="#3d3d4e" stroke-width="1.2" />
+      <text x="14" y="22" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Nux Vomica</text>
+      <text x="14" y="36" fill="#a1a1aa" font-family="-apple-system, sans-serif" font-size="9.5">4 / 4 symptoms matched · Kent</text>
+      <rect x="188" y="12" width="64" height="22" rx="11" fill="#2d2738" stroke="#6b46c1" stroke-width="1" />
+      <text x="220" y="26" fill="#e9d5ff" font-family="'Geist Mono', monospace" font-size="10" font-weight="600" text-anchor="middle">96%</text>
+    </g>
+
+    <!-- Match 2 -->
+    <g transform="translate(422, 208)">
+      <rect x="0" y="0" width="264" height="46" rx="6" fill="#17171d" stroke="#2b2b36" stroke-width="1" />
+      <text x="14" y="22" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Arsenicum Album</text>
+      <text x="14" y="36" fill="#71717a" font-family="-apple-system, sans-serif" font-size="9.5">3 / 4 symptoms matched · Boericke</text>
+      <rect x="194" y="12" width="58" height="22" rx="11" fill="#1f1f26" stroke="#383844" stroke-width="1" />
+      <text x="223" y="26" fill="#a1a1aa" font-family="'Geist Mono', monospace" font-size="10" text-anchor="middle">88%</text>
+    </g>
+
+    <!-- Match 3 -->
+    <g transform="translate(422, 264)">
+      <rect x="0" y="0" width="264" height="46" rx="6" fill="#17171d" stroke="#2b2b36" stroke-width="1" />
+      <text x="14" y="22" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Lycopodium Clavatum</text>
+      <text x="14" y="36" fill="#71717a" font-family="-apple-system, sans-serif" font-size="9.5">3 / 4 symptoms matched · Boger</text>
+      <rect x="194" y="12" width="58" height="22" rx="11" fill="#1f1f26" stroke="#383844" stroke-width="1" />
+      <text x="223" y="26" fill="#a1a1aa" font-family="'Geist Mono', monospace" font-size="10" text-anchor="middle">79%</text>
+    </g>
+
+    <!-- Match 4 -->
+    <g transform="translate(422, 320)">
+      <rect x="0" y="0" width="264" height="46" rx="6" fill="#17171d" stroke="#2b2b36" stroke-width="1" />
+      <text x="14" y="22" fill="#d4d4d8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Bryonia Alba</text>
+      <text x="14" y="36" fill="#71717a" font-family="-apple-system, sans-serif" font-size="9.5">2 / 4 symptoms matched · Kent</text>
+      <rect x="194" y="12" width="58" height="22" rx="11" fill="#1f1f26" stroke="#383844" stroke-width="1" />
+      <text x="223" y="26" fill="#a1a1aa" font-family="'Geist Mono', monospace" font-size="10" text-anchor="middle">64%</text>
+    </g>
+
+    <!-- Status Bar -->
+    <rect x="70" y="398" width="660" height="37" rx="0" fill="#141418" />
+    <line x1="70" y1="398" x2="730" y2="398" stroke="#25252b" stroke-width="1" />
+    <text x="94" y="421" fill="#71717a" font-family="'Geist Mono', monospace" font-size="10">TENTAXAUR STUDIO · PRODUCTION PILOT</text>
+    <text x="706" y="421" fill="#71717a" font-family="'Geist Mono', monospace" font-size="10" text-anchor="end">FASTAPI · LLM REPERTORY MATCHING · NEXT.JS</text>
+  </g>
+</svg>
