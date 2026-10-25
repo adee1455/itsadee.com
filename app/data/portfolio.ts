@@ -10,6 +10,7 @@ export type Project = {
   preview?: string;
   hoverPreview?: string;
   video?: string;
+  caseStudySlug?: string;
 };
 
 export type Experience = {
@@ -33,9 +34,10 @@ export const projects: Project[] = [
     meta: "Native macOS utility · Current",
     description:
       "A privacy-first native Mac utility for converting and acting on files where they already live. Its Shift-drag radial menu in Finder keeps common actions close to the cursor, while outputs save safely beside the original files.",
-    tags: ["Swift", "SwiftUI", "AppKit", "macOS", "Privacy-first"],
+    tags: ["Swift", "AppKit"],
     preview: "/projects/fettle-cover.png",
     video: "/projects/fettle_launch.mp4",
+    caseStudySlug: "fettle",
     links: [
       { label: "Website", href: "https://fettle.itsadee.com" },
       { label: "GitHub", href: "https://github.com/adee1455/fettle" },
@@ -57,7 +59,7 @@ export const projects: Project[] = [
     meta: "Web3 product · 2024",
     description:
       "A decentralized file locker that combines encrypted IPFS storage with blockchain-based references and permissions. It won $2,000 across two WalletConnect Build the New Internet hackathon tracks.",
-    tags: ["Next.js", "Solidity", "IPFS", "WalletConnect", "Base"],
+    tags: ["Next.js", "Solidity", "IPFS", "Base"],
     preview: "/projects/defile-cover.png",
     links: [
       { label: "Website", href: "https://defile.vercel.app" },
@@ -70,7 +72,7 @@ export const projects: Project[] = [
     meta: "Ambient display PWA · 2025",
     description:
       "An always-on fullscreen dashboard inspired by the StandBy experience on Apple devices. Features real-time clock, local weather, crypto and stock trackers, pomodoro timer, and customizable widgets in an OLED-friendly display.",
-    tags: ["TypeScript", "React", "PWA", "Tailwind CSS", "Widgets"],
+    tags: ["TypeScript", "React"],
     preview: "/projects/standby-cover.png",
     hoverPreview: "/projects/standby-hover.png",
     links: [

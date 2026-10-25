@@ -6,13 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "new:post": "node scripts/new-content.mjs post",
+    "new:case-study": "node scripts/new-content.mjs case-study"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
     "@fontsource-variable/geist-mono": "^5.2.8",
     "@fontsource/instrument-serif": "^5.2.7",
+    "@vercel/analytics": "^2.0.1",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^1.61.0",
+    "marked": "^18.1.1",
     "next": "16.4.2",
     "next-themes": "^0.4.6",
     "react": "19.3.0",

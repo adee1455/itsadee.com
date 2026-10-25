@@ -2,7 +2,8 @@
 
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { Globe, Play } from "lucide-react";
+import Link from "next/link";
+import { Globe, Play, BookOpen } from "lucide-react";
 import { Project } from "../data/portfolio";
 
 function GithubIcon({ size = 13 }: { size?: number }) {
@@ -118,6 +119,16 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
         <div className="project-links">
+          {project.caseStudySlug && (
+            <Link
+              href={`/projects/${project.caseStudySlug}`}
+              className="project-link-btn project-casestudy-btn"
+              title={`Read ${project.title} Case Study`}
+            >
+              <BookOpen size={12} />
+              <span>Case Study</span>
+            </Link>
+          )}
           {project.links.map((link) => {
             const isGithub = link.label.toLowerCase().includes("github");
             return (

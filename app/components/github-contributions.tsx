@@ -151,32 +151,32 @@ export function GitHubContributions() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
 
-          {/* Hover info / Tooltip */}
-          <div className="github-footer">
-            <div className="github-tooltip-info">
-              {hoveredDay ? (
-                <span>
-                  <strong>{hoveredDay.count}</strong> contribution{hoveredDay.count === 1 ? "" : "s"} on{" "}
-                  {formatDate(hoveredDay.date)}
-                </span>
-              ) : (
-                <span className="github-hint">
-                  Combined @adee1455 (203) &amp; @adeeshaikhcs (564) · Hover squares for details
-                </span>
-              )}
-            </div>
+      {/* Hover info / Tooltip & Legend (Sticky to widget width) */}
+      <div className="github-footer">
+        <div className="github-tooltip-info">
+          {hoveredDay ? (
+            <span>
+              <strong>{hoveredDay.count}</strong> contribution{hoveredDay.count === 1 ? "" : "s"} on{" "}
+              {formatDate(hoveredDay.date)}
+            </span>
+          ) : (
+            <span className="github-hint">
+              Combined @adee1455 (203) &amp; @adeeshaikhcs (564) · Hover squares for details
+            </span>
+          )}
+        </div>
 
-            <div className="github-legend">
-              <span>Less</span>
-              <span className="github-cell level-0" />
-              <span className="github-cell level-1" />
-              <span className="github-cell level-2" />
-              <span className="github-cell level-3" />
-              <span className="github-cell level-4" />
-              <span>More</span>
-            </div>
-          </div>
+        <div className="github-legend">
+          <span>Less</span>
+          <span className="github-cell level-0" />
+          <span className="github-cell level-1" />
+          <span className="github-cell level-2" />
+          <span className="github-cell level-3" />
+          <span className="github-cell level-4" />
+          <span>More</span>
         </div>
       </div>
     </div>

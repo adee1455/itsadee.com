@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, MapPin, Mail, MoveRight, Globe, Calendar } from "lucide-react";
+import { getAllPosts } from "@/lib/content";
 
 function GithubIcon({ size = 13 }: { size?: number }) {
   return (
@@ -31,8 +33,57 @@ import { ProjectCard } from "./components/project-card";
 import { experiences, moreWork, projects, socials } from "./data/portfolio";
 
 export default function Home() {
+  const allPosts = getAllPosts();
+  const featuredPosts = allPosts.slice(0, 2);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://itsadee.com/#person",
+        name: "Adee Shaikh",
+        url: "https://itsadee.com",
+        image: "https://itsadee.com/avatar.png",
+        jobTitle: "Software Developer & Product Builder",
+        description:
+          "Software developer and product builder crafting high-craft native macOS utilities, modern web applications, and decentralized systems.",
+        sameAs: [
+          "https://github.com/adee1455",
+          "https://x.com/hey_itsadee",
+          "https://www.linkedin.com/in/adeeshaikh",
+        ],
+        knowsAbout: [
+          "Swift",
+          "AppKit",
+          "macOS Development",
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Solidity",
+          "Web3",
+          "Product Engineering",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://itsadee.com/#website",
+        url: "https://itsadee.com",
+        name: "Adee Shaikh | Software Developer & Product Builder",
+        description: "Useful software, built from interface to launch.",
+        publisher: { "@id": "https://itsadee.com/#person" },
+        inLanguage: "en-US",
+      },
+    ],
+  };
+
   return (
     <main id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Mascot />
       <div className="shell">
         <Header />
@@ -137,26 +188,86 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section 03: Activity / GitHub Heatmap (Chánh Đại style) */}
+          {/* Section 03: Writing */}
+          <section className="section writing-home-section" id="writing" aria-labelledby="writing-title">
+            <span className="margin-note left" aria-hidden="true">
+              essays &amp; notes ⤹
+            </span>
+            <div className="section-heading">
+              <p>03</p>
+              <h2 id="writing-title">Writing</h2>
+              <span className="section-note">essays &amp; technical notes</span>
+            </div>
+            <div className="writing-home-grid">
+              {featuredPosts.map((post) => (
+                <article key={post.slug} className="writing-home-card">
+                  <Link href={`/writing/${post.slug}`} className="writing-home-card-link">
+                    {post.coverImage && (
+                      <div className="writing-home-cover-wrap">
+                        <Image
+                          src={post.coverImage}
+                          alt={post.title}
+                          width={600}
+                          height={340}
+                          priority
+                          className="writing-home-cover-img"
+                        />
+                      </div>
+                    )}
+                    <div className="writing-home-card-body">
+                      <div className="writing-home-meta">
+                        <time>{post.date}</time>
+                        <span>·</span>
+                        <span>{post.readTime}</span>
+                      </div>
+                      <h3 className="writing-home-card-title">{post.title}</h3>
+                      {post.summary && (
+                        <p className="writing-home-card-summary">{post.summary}</p>
+                      )}
+                      <div className="writing-home-card-footer">
+                        <div className="tags">
+                          {post.tags.map((tag) => (
+                            <span key={tag}>{tag}</span>
+                          ))}
+                        </div>
+                        <span className="writing-home-read-more">
+                          <span>Read</span>
+                          <MoveRight size={12} />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+            <div className="writing-home-actions">
+              <Link href="/writing" className="action-btn writing-view-all-btn">
+                <span>View All Writing ({allPosts.length})</span>
+                <MoveRight size={13} />
+              </Link>
+            </div>
+          </section>
+
+          {/* Section 04: Activity / GitHub Heatmap (Chánh Đại style) */}
           <section className="section" id="activity" aria-labelledby="activity-title">
             <span className="margin-note left" aria-hidden="true">
               commit streak ⤹
             </span>
             <div className="section-heading">
-              <p>03</p>
+              <p>04</p>
               <h2 id="activity-title">Activity</h2>
               <span className="section-note">github heatmap</span>
             </div>
             <GitHubContributions />
           </section>
 
-          {/* Section 04: Experience */}
+          {/* Section 05: Experience */}
           <section className="section" id="experience" aria-labelledby="experience-title">
             <span className="margin-note left" aria-hidden="true">
               roles & journey ⤹
             </span>
             <div className="section-heading">
-              <p>04</p>
+              <p>05</p>
               <h2 id="experience-title">Experience</h2>
               <span className="section-note flex items-center gap-2">
                 <span>roles &amp; engineering</span>
@@ -166,23 +277,23 @@ export default function Home() {
             <ExperienceList experiences={experiences} />
           </section>
 
-          {/* Section 05: Tech Stack (Chánh Đại / Animesh style with category filters & hover brand colors) */}
+          {/* Section 06: Tech Stack (Chánh Đại / Animesh style with category filters & hover brand colors) */}
           <section className="section" id="stack" aria-labelledby="stack-title">
             <div className="section-heading">
-              <p>05</p>
+              <p>06</p>
               <h2 id="stack-title">Tech Stack</h2>
               <span className="section-note">select category to filter</span>
             </div>
             <TechStack />
           </section>
 
-          {/* Section 06: Contact */}
+          {/* Section 07: Contact */}
           <section className="section contact-section" id="contact" aria-labelledby="contact-title">
             <span className="margin-note left" aria-hidden="true">
               say hello ⤹
             </span>
             <div className="section-heading">
-              <p>06</p>
+              <p>07</p>
               <h2 id="contact-title">Contact</h2>
               <span className="section-note">get in touch</span>
             </div>

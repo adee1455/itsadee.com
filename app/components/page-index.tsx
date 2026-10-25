@@ -6,6 +6,7 @@ const items = [
   { label: "Intro", href: "#top", id: "top" },
   { label: "About", href: "#about", id: "about" },
   { label: "Projects", href: "#work", id: "work" },
+  { label: "Writing", href: "#writing", id: "writing" },
   { label: "Activity", href: "#activity", id: "activity" },
   { label: "Experience", href: "#experience", id: "experience" },
   { label: "Tech Stack", href: "#stack", id: "stack" },

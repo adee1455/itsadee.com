@@ -2,31 +2,46 @@
 
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 
 const navigation = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#work" },
-  { label: "Activity", href: "#activity" },
+  { label: "Writing", href: "#writing" },
   { label: "Experience", href: "#experience" },
-  { label: "Stack", href: "#stack" },
   { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="Back to top">
+      <Link className="wordmark" href={isHome ? "#top" : "/"} aria-label="Back to top">
         itsadee.com
-      </a>
+      </Link>
       <nav className={open ? "main-nav open" : "main-nav"} aria-label="Main navigation">
-        {navigation.map((item) => (
-          <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
-            {item.label}
-          </a>
-        ))}
+        {navigation.map((item) => {
+          const targetHref = item.href.startsWith("#")
+            ? isHome
+              ? item.href
+              : `/${item.href}`
+            : item.href;
+
+          return (
+            <Link
+              key={item.label}
+              href={targetHref}
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
       <div className="header-controls">
         <ThemeToggle />
