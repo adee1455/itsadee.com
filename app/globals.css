@@ -323,6 +323,51 @@ html[data-theme='light'] .margin-note {
   padding: 0 5px;
 }
 
+.role-desktop {
+  display: inline;
+}
+
+.role-mobile {
+  display: none;
+}
+
+.tagline-flip-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  vertical-align: bottom;
+  height: 1.4em;
+}
+
+.tagline-flip-text {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform, opacity, filter;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tagline-flip-text.is-entering {
+  transform: translateY(0%);
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.tagline-flip-text.is-exiting {
+  transform: translateY(40%);
+  opacity: 0;
+  filter: blur(1px);
+}
+
+.tagline-flip-text.is-prepared {
+  transform: translateY(-20%);
+  opacity: 0;
+  filter: blur(1px);
+  transition: none;
+}
+
 .location {
   display: flex;
   align-items: center;
@@ -1518,11 +1563,20 @@ footer {
     font-size: 2.25rem;
   }
 
+  .role-desktop {
+    display: none;
+  }
+
+  .role-mobile {
+    display: inline-flex;
+  }
+
   .role {
-    font-size: 0.74rem;
+    font-size: 0.8rem;
     line-height: 1.4;
     word-break: normal;
     hyphens: none;
+    margin: 8px 0 6px;
   }
 
   .identity-actions {

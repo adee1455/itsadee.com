@@ -28,6 +28,7 @@ import { PageIndex } from "./components/page-index";
 import { GitHubContributions } from "./components/github-contributions";
 import { TechStack } from "./components/tech-stack";
 import { PiixpalCreature } from "./components/piixpal-creature";
+import { TaglineSwitcher } from "./components/tagline-switcher";
 import { AboutBullets } from "./components/about-bullets";
 import { ProjectCard } from "./components/project-card";
 import { experiences, moreWork, projects, socials } from "./data/portfolio";
@@ -107,7 +108,12 @@ export default function Home() {
               <div className="identity-copy">
                 <h1 id="hero-title">Adee Shaikh</h1>
                 <p className="role">
-                  Software Developer <span>·</span> Product-minded builder
+                  <span className="role-desktop">
+                    Software Developer <span>·</span> Product-minded builder
+                  </span>
+                  <span className="role-mobile">
+                    <TaglineSwitcher items={["Software Developer", "Product-minded builder"]} />
+                  </span>
                 </p>
                 <p className="location">
                   <MapPin size={15} /> Nashik, India

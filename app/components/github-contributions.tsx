@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GitCommit, ArrowUpRight } from "lucide-react";
 import fallbackData from "../data/github-contributions.json";
 
@@ -29,6 +29,27 @@ export function GitHubContributions() {
     days: fallbackData.contributions as ContributionDay[],
   });
   const [hoveredDay, setHoveredDay] = useState<ContributionDay | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const scrollToRecent = () => {
+      if (window.innerWidth <= 768) {
+        el.scrollLeft = el.scrollWidth;
+      }
+    };
+
+    scrollToRecent();
+    const frameId = requestAnimationFrame(scrollToRecent);
+    const timeoutId = setTimeout(scrollToRecent, 150);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      clearTimeout(timeoutId);
+    };
+  }, [data]);
 
   useEffect(() => {
     fetch("/api/github")
@@ -119,7 +140,7 @@ export function GitHubContributions() {
         </div>
       </div>
 
-      <div className="github-graph-container">
+      <div className="github-graph-container" ref={containerRef}>
         <div className="github-graph-inner">
           {/* Month headers */}
           <div className="github-months" aria-hidden="true">
