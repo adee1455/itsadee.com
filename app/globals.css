@@ -475,13 +475,21 @@ html[data-theme='light'] .margin-note {
   color: var(--muted);
   line-height: 1.68;
   padding-left: 4px;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
 .about-bullets li::marker {
   color: var(--muted);
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about-bullets li:first-child {
+.about-bullets li.is-active,
+.about-bullets li:hover {
+  color: var(--ink);
+}
+
+.about-bullets li.is-active::marker,
+.about-bullets li:hover::marker {
   color: var(--ink);
 }
 
@@ -543,9 +551,14 @@ html[data-theme='light'] .margin-note {
 }
 
 .project-card:hover {
-  border-color: var(--ink);
+  border-color: color-mix(in srgb, var(--ink) 25%, var(--line));
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.dark .project-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
 }
 
 .project-preview-wrap {
@@ -562,12 +575,80 @@ html[data-theme='light'] .margin-note {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-card:hover .project-preview-img {
-  transform: scale(1.03);
+  transform: scale(1.02);
+}
+
+.project-preview-hover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.project-preview-hover-img.active {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.project-preview-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.project-preview-video.playing {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.project-video-badge-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 12, 13, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f5f5f7;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  z-index: 5;
+}
+
+.project-play-icon {
+  margin-left: 1.5px;
+  transition: transform 0.25s ease;
+}
+
+.project-card:hover .project-video-badge-icon {
+  background: rgba(12, 12, 13, 0.45);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: scale(0.92);
+  opacity: 0.75;
 }
 
 .project-preview-empty {

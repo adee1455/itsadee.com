@@ -26,6 +26,8 @@ import { PageIndex } from "./components/page-index";
 import { GitHubContributions } from "./components/github-contributions";
 import { TechStack } from "./components/tech-stack";
 import { PiixpalCreature } from "./components/piixpal-creature";
+import { AboutBullets } from "./components/about-bullets";
+import { ProjectCard } from "./components/project-card";
 import { experiences, moreWork, projects, socials } from "./data/portfolio";
 
 export default function Home() {
@@ -44,7 +46,7 @@ export default function Home() {
             <div className="identity-card">
               <div className="avatar-wrap">
                 <Image
-                  src="/adee-avatar.png"
+                  src="/avatar.png"
                   width={160}
                   height={160}
                   priority
@@ -87,17 +89,7 @@ export default function Home() {
             </div>
             <div className="about-copy">
               <p className="about-greeting">Hey,</p>
-              <ul className="about-bullets">
-                <li>
-                  I&apos;m Adee Shaikh, a product-focused software developer who enjoys turning ideas into useful, thoughtfully crafted products.
-                </li>
-                <li>
-                  I build software across different platforms, explore AI-powered solutions, and combine engineering with product thinking to take ideas from concept to launch.
-                </li>
-                <li>
-                  I&apos;m fascinated by the intersection of technology, user experience, and business, and how the right ideas can become products that solve real problems.
-                </li>
-              </ul>
+              <AboutBullets />
             </div>
           </section>
 
@@ -128,67 +120,7 @@ export default function Home() {
             </div>
             <div className="project-list">
               {projects.map((project) => (
-                <article className="project-card" key={project.title}>
-                  {/* Top Preview Banner */}
-                  {project.preview ? (
-                    <div className="project-preview-wrap">
-                      <Image
-                        src={project.preview}
-                        alt={`${project.title} interface preview`}
-                        width={720}
-                        height={450}
-                        className="project-preview-img"
-                      />
-                    </div>
-                  ) : (
-                    <div className="project-preview-wrap project-preview-empty">
-                      <div className="project-placeholder-content">
-                        <span className="project-placeholder-badge">In Development</span>
-                        <span className="project-placeholder-sub">Preview coming soon · PWA</span>
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="project-card-body">
-                    <div className="project-title-row">
-                      <div className="project-title-left">
-                        <span className="project-number-badge">{project.number}</span>
-                        <h3>{project.title}</h3>
-                      </div>
-                      <span className="project-meta-pill">
-                        {project.meta.split(" · ")[1] || project.meta}
-                      </span>
-                    </div>
-                    <p className="project-desc">{project.description}</p>
-                  </div>
-
-                  <div className="project-card-footer">
-                    <div className="tags">
-                      {project.tags.map((tag) => (
-                        <span key={tag}>{tag}</span>
-                      ))}
-                    </div>
-                    <div className="project-links">
-                      {project.links.map((link) => {
-                        const isGithub = link.label.toLowerCase().includes("github");
-                        return (
-                          <a
-                            href={link.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            key={link.label}
-                            className="project-link-btn"
-                            title={`${project.title} ${link.label}`}
-                            aria-label={`${project.title} ${link.label}`}
-                          >
-                            {isGithub ? <GithubIcon size={13} /> : <Globe size={13} />}
-                            <span>{link.label}</span>
-                          </a>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </article>
+                <ProjectCard key={project.title} project={project} />
               ))}
             </div>
             <div className="more-work">

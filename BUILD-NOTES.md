@@ -21,8 +21,8 @@ The site is designed as an original portfolio informed by the compact editorial 
 - Public “Open to work” language has been removed.
 - No phone number is displayed.
 - Social/contact links: email, LinkedIn, GitHub, and X.
-- Featured projects, in order: Fettle, Rubrii, DeFile, Streetbyte.
-- Supporting work: PickUmrah, RentPay, Testie, Neuropal, Sanjivani Banquet, and DCA Academy.
+- Featured projects, in order: Fettle, Rubrii, DeFile, StandBy.
+- Supporting work: Streetbyte, PickUmrah, RentPay, Testie, Neuropal, and Ancestly.
 - Experience uses accessible accordion rows for Creatoactive Studios, Tentaxaur Studio, Jade Studios, Neuropal, DataCrush Analytics, and LearnyFox Studio.
 - Product-management interest is shown through wording about scope, interface, delivery, and product ownership; the site does not claim a Product Manager title.
 

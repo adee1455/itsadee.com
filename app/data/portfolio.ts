@@ -8,6 +8,8 @@ export type Project = {
   tags: string[];
   links: ProjectLink[];
   preview?: string;
+  hoverPreview?: string;
+  video?: string;
 };
 
 export type Experience = {
@@ -32,7 +34,8 @@ export const projects: Project[] = [
     description:
       "A privacy-first native Mac utility for converting and acting on files where they already live. Its Shift-drag radial menu in Finder keeps common actions close to the cursor, while outputs save safely beside the original files.",
     tags: ["Swift", "SwiftUI", "AppKit", "macOS", "Privacy-first"],
-    preview: "/projects/fettle-real.png",
+    preview: "/projects/fettle-cover.png",
+    video: "/projects/fettle_launch.mp4",
     links: [
       { label: "Website", href: "https://fettle.itsadee.com" },
       { label: "GitHub", href: "https://github.com/adee1455/fettle" },
@@ -45,7 +48,7 @@ export const projects: Project[] = [
     description:
       "An AI-powered repertorisation platform for homeopathy practitioners and students. Built from idea through early-user launch at Tentaxaur Studio, with product ownership spanning interface, implementation, and delivery.",
     tags: ["Product engineering", "AI", "Web"],
-    preview: "/projects/rubrii-real.png",
+    preview: "/projects/rubrii-cover.png",
     links: [{ label: "Website", href: "https://rubrii.com" }],
   },
   {
@@ -55,7 +58,7 @@ export const projects: Project[] = [
     description:
       "A decentralized file locker that combines encrypted IPFS storage with blockchain-based references and permissions. It won $2,000 across two WalletConnect Build the New Internet hackathon tracks.",
     tags: ["Next.js", "Solidity", "IPFS", "WalletConnect", "Base"],
-    preview: "/projects/defile-real.png",
+    preview: "/projects/defile-cover.png",
     links: [
       { label: "Website", href: "https://defile.vercel.app" },
       { label: "GitHub", href: "https://github.com/adee1455/DeFile" },
@@ -63,25 +66,27 @@ export const projects: Project[] = [
   },
   {
     number: "04",
-    title: "Streetbyte",
-    meta: "Community PWA · 2025",
+    title: "StandBy",
+    meta: "Ambient display PWA · 2025",
     description:
-      "A community-driven street-food discovery product for India, bringing nearby vendors, stories, profiles, and ratings into one PWA. The project reached the top 28 of 400+ teams at the SPPU Startup Olympiad 2025 finale.",
-    tags: ["TypeScript", "PWA", "Tailwind", "Geolocation"],
+      "An always-on fullscreen dashboard inspired by the StandBy experience on Apple devices. Features real-time clock, local weather, crypto and stock trackers, pomodoro timer, and customizable widgets in an OLED-friendly display.",
+    tags: ["TypeScript", "React", "PWA", "Tailwind CSS", "Widgets"],
+    preview: "/projects/standby-cover.png",
+    hoverPreview: "/projects/standby-hover.png",
     links: [
-      { label: "Website", href: "https://streetbyte.vercel.app" },
-      { label: "GitHub", href: "https://github.com/adee1455/streetbyte2.0" },
+      { label: "Website", href: "https://standby.itsadee.com" },
+      { label: "GitHub", href: "https://github.com/adee1455/macstandby" },
     ],
   },
 ];
 
 export const moreWork = [
+  { title: "Streetbyte", href: "https://streetbyte.vercel.app", note: "Street-food discovery PWA · Olympiad finalist" },
   { title: "PickUmrah", href: "https://pickumrah.com", note: "Travel product" },
   { title: "RentPay", href: "https://rentpays.vercel.app", note: "Payment-focused web product" },
   { title: "Testie", href: "https://mocktestie.vercel.app", note: "AI mock-test platform" },
   { title: "Neuropal", href: "https://neuropal.in", note: "Mental-wellness product" },
-  { title: "Sanjivani Banquet", href: "https://sanjivanibanquet.in", note: "Client delivery" },
-  { title: "DCA Academy", href: "https://academy.datacrushanalytics.com", note: "Client delivery" },
+  { title: "Ancestly", href: "https://ancestly.vercel.app", note: "Family tree & archive platform" },
 ];
 
 export const experiences: Experience[] = [
