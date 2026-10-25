@@ -312,23 +312,38 @@ html[data-theme='light'] .margin-note {
 
 .role {
   margin: 14px 0 8px;
-  color: var(--muted);
+  color: var(--ink);
   font-family: "Geist Mono Variable", monospace;
   font-size: 0.92rem;
   line-height: 1.4;
 }
 
-.role span {
-  color: var(--line);
-  padding: 0 5px;
+.dark .role,
+.dark .role-desktop,
+.dark .role-mobile,
+.dark .tagline-flip-container,
+.dark .tagline-flip-text,
+html[data-theme='dark'] .role,
+html[data-theme='dark'] .role-desktop,
+html[data-theme='dark'] .role-mobile,
+html[data-theme='dark'] .tagline-flip-container,
+html[data-theme='dark'] .tagline-flip-text {
+  color: #ffffff;
+}
+
+.role .role-sep {
+  color: var(--muted);
+  padding: 0 6px;
 }
 
 .role-desktop {
   display: inline;
+  color: inherit;
 }
 
 .role-mobile {
   display: none;
+  color: inherit;
 }
 
 .tagline-flip-container {
@@ -338,11 +353,13 @@ html[data-theme='light'] .margin-note {
   overflow: hidden;
   vertical-align: bottom;
   height: 1.4em;
+  color: inherit;
 }
 
 .tagline-flip-text {
   display: inline-block;
   white-space: nowrap;
+  color: inherit;
   will-change: transform, opacity, filter;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),

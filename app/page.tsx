@@ -109,7 +109,7 @@ export default function Home() {
                 <h1 id="hero-title">Adee Shaikh</h1>
                 <p className="role">
                   <span className="role-desktop">
-                    Software Developer <span>·</span> Product-minded builder
+                    Software Developer <span className="role-sep">·</span> Product-minded builder
                   </span>
                   <span className="role-mobile">
                     <TaglineSwitcher items={["Software Developer", "Product-minded builder"]} />
